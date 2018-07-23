@@ -20,7 +20,8 @@ export function initMap(ymaps, containerId) {
   });
 
   objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
-
+  myMap.geoObjects.add(objectManager);
+  //не опдгружались метки. objectManager нужно добавить на карту (он содержит коллекцию обьектов)
   loadList().then(data => {
     objectManager.add(data);
   });

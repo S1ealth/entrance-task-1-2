@@ -8,7 +8,8 @@ export function mapServerData(serverData) {
       geometry: 
       {
         type: "Point",
-        coordinates: [obj.long, obj.lat]
+        coordinates: [obj.lat,obj.long]/*метки не появлялись в Москве.
+         перебрав подгрузку понял, что проблема с координатами (когда зазумил карту).*/ 
       },
       properties: {
         iconCaption: obj.serialNumber
