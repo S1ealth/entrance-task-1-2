@@ -25,9 +25,13 @@ export function getDetailsContentLayout(ymaps) {
                 Идет загрузка данных...
             </div>
         {% endif %}
-    `,
+    </div>`//отсутствовал закрывающий тег.
+    ,
     {
-      build: () => {
+      /*трелочные функции не имеют своего контекста,
+       поэтому для использования их для перезаписи медодов build() и clear() пришлось бы переписывать оба метода
+       обьявил методы как обычные функции(с учетом сокращений доступных для методов обьектов в ES5*/
+      build() {
         BalloonContentLayout.superclass.build.call(this);
 
         const { details } = this.getData().object.properties;
@@ -43,7 +47,7 @@ export function getDetailsContentLayout(ymaps) {
         }
       },
 
-      clear: () => {
+      clear() {
         if (this.connectionChart) {
           this.connectionChart.destroy();
         }
