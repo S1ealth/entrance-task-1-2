@@ -40,7 +40,7 @@ export function createChart(container, data, isActive) {
         },
         scales: {
             xAxes: [{ ticks: { display: false } }],
-            yAxes: [{ ticks: { beginAtZero: true, } }]//с параметров max:0 линии не отображались.
+            yAxes: [{ ticks: { beginAtZero: true, } }]//с параметров max:0 линии не отображались(дкументация api. вариантов 2: убрать параметр, задать значение data.lenght).
         }
     }
   });

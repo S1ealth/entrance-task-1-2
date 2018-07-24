@@ -18,9 +18,9 @@ export function initMap(ymaps, containerId) {
     geoObjectHideIconOnBalloonOpen: false,
     geoObjectBalloonContentLayout: getDetailsContentLayout(ymaps)
   });
-
+  //иконка кластера не показывала, что в нем есть неисправные станции(вместе с исправными).убрал "зеленый" пресет для кластера и это исправило ситуацию
   myMap.geoObjects.add(objectManager);
-  //не опдгружались метки. objectManager нужно добавить на карту (он содержит коллекцию обьектов)
+  //не подгружались метки. objectManager нужно добавить на карту (он содержит коллекцию обьектов)(из документации APi Карт)
   loadList().then(data => {
     objectManager.add(data);
   });

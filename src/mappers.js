@@ -9,7 +9,9 @@ export function mapServerData(serverData) {
       {
         type: "Point",
         coordinates: [obj.lat,obj.long]/*метки не появлялись в Москве.
-         перебрав подгрузку понял, что проблема с координатами (когда зазумил карту).*/ 
+         перебрав подгрузку понял, что проблема с координатами (когда зазумил карту).
+         варианты решений: переопределить coordorder при загрузке API, или исправить координаты в парсере
+         */ 
       },
       properties: {
         iconCaption: obj.serialNumber
